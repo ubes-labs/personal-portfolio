@@ -1,0 +1,65 @@
+name: Deploy to Github pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "personal-portfolio-ui/**"
+      - ".github/workflows/deploy-pages.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and Deploy ng application
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+
+    steps:
+      - name: Checkout Source code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+          cache-dependency-path: personal-portfolio-ui/package-lock.json
+
+      - name: Install npm dependencies
+        working-directory: ./personal-portfolio-ui
+        run: npm ci
+
+      - name: Execute Unit tests
+        working-directory: ./personal-portfolio-ui
+        run: npm run test --watch=false --browsers=ChromeHeadless
+
+      - name: Build ng application
+        working-directory: ./personal-portfolio-ui
+        env:
+          APP_NAME: ${{ github.event.repository.name }}
+        run: |
+          npm run build -- \
+          --configuration production \
+          --base-href "/${APP_NAME}/"
+
+      - name: Setup Github pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: personal-portfolio-ui/dist/personal-portfolio-ui/browser
+
+      - name: Deploy to Github pages
+        uses: actions/deploy-pages@v4
