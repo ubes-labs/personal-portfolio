@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { AppDataService } from '../../../core/services/app-data/app-data.service';
 
 @Component({
   selector: 'app-layout',
-  imports: [],
+  imports: [MatCardModule],
   templateUrl: './layout.html',
   styleUrl: './layout.scss',
 })
