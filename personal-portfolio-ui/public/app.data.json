@@ -1,5 +1,83 @@
 {
   "fullName": "Akashneel Ghosh",
   "currentDesignation": "Senior Software Engineer",
-  "summary": "Seasoned, professional, forward-looking Software Engineer with 7+ years' background in developing and executing innovative software solutions to enhance business productivity. Highly experienced in all aspects of full Stack Software Development, using enterprise best practices and advanced technical skill. Have worked in Agile lifecycle with DevOps, coordinating with cross-functional teams and clients at a fast paced, deadline driven environment to steer timely solution delivery."
+  "summary": "Seasoned, professional, forward-looking Software Engineer with 7+ years' background in developing and executing innovative software solutions to enhance business productivity. Highly experienced in all aspects of full Stack Software Development, using enterprise best practices and advanced technical skill. Have worked in Agile lifecycle with DevOps, coordinating with cross-functional teams and clients at a fast paced, deadline driven environment to steer timely solution delivery.",
+  "firstSkillSet": [
+    ".NET Core",
+    "Web API",
+    "C#",
+    "Entity Framework Core",
+    "LINQ",
+    "SOLID Principle"
+  ],
+  "secondSkillSet": ["Angular", "Typescript", "rxjs", "HTML | CSS", "Javascript", "Xunit | Moq"],
+  "thirdSkillSet": ["SQL | pgSQL", "Microservices", "Anthropic Claude Code", "Prompt Engineering"],
+  "workExperience": [
+    {
+      "designation": "Senior Software Engineer",
+      "organisation": "NEOGOV",
+      "joiningDate": "2023-09-06T00:00:00+05:30",
+      "lastDate": null,
+      "location": "Kharagpur, WB, IN (Remote)",
+      "responsibilities": []
+    },
+    {
+      "designation": "Software Engineer | Technical Specialist",
+      "organisation": "Koch Industries",
+      "joiningDate": "2021-09-06T00:00:00+05:30",
+      "lastDate": "2023-08-28T00:00:00+05:30",
+      "location": "Bengaluru, KA, IN",
+      "responsibilities": [
+        "Working on KBX Logistics project which deals with transporting of packages and shipments across international/intranational borders with shipment tracking and administration by application users.",
+        "Roles and Responsibilities include working with team of 7 members collaboratively, client interaction for requirement understanding in <b>Agile lifecycle</b> using <b>Azure DevOps</b> Application.",
+        "Hands on backend modifying DB Objects in <b>SQL Server</b>, <b>GRPC services</b>, <b>RESTful APIs</b> in <b>.NET Core</b> and <b>C#</b> as backend services and frontend working with <b>Angular 13</b> with <b>RxJS, shared services</b> and Lazy loading with advanced concepts.",
+        "Application is based on <b>Microservice architechture</b> and <b>Docker</b> containers. The project is using <b>Datadog</b> for services monitoring and <b>ArgoCd</b> for kubernetes cluster management.",
+        "Have been following <b>SOLID principle</b> with <b>Dependency Injection</b> Design pattern.",
+        "Following every enterprise best practices while coding, writing and executing unit test cases in both backend with <b>NUnit</b> and frontend with <b>karma - jasmine</b> with adhering to code review comments."
+      ]
+    },
+    {
+      "designation": "User Interface Engineer II",
+      "organisation": "Dell EMC",
+      "joiningDate": "2019-09-21T00:00:00+05:30",
+      "lastDate": "2021-09-03T00:00:00+05:30",
+      "location": "Bengaluru, KA, IN",
+      "responsibilities": [
+        "Worked on Inception project for displaying Sales, System and configurations data of Dell EMC and subsidiary products for Sales operation and Leadership team.",
+        "Roles and Responsibilities include working with team of 5 members collaboratively, client interaction for requirement understanding in Agile lifecycle.",
+        "Had followed <b>SOLID principle</b> with <b>Dependency Injection</b> Design pattern.",
+        "Hands on backend modifying DB Objects in <b>SQL Server</b>, <b>RESTful Web API</b> in <b>.NET Framework</b> and <b>C#</b> and frontend working with <b>Angular 8</b> with <b>RxJS</b> and Lazy loading with advanced technologies.",
+        "Was responsible for Windows Server and <b>IIS</b> maintainance for application deployment and server troubleshooting."
+      ]
+    },
+    {
+      "designation": "Software Associate, (S & IT) Intl.",
+      "organisation": "British Telecom",
+      "joiningDate": "2018-11-21T00:00:00+05:30",
+      "lastDate": "2019-09-13T00:00:00+05:30",
+      "location": "Bengaluru, KA, IN",
+      "responsibilities": [
+        "Worked on UTB Mobility project for customer facing BT mobile application project.",
+        "Hands on RESTful Web API in .NET Framework and C# and frontend working with Angular 8 with RxJS and Lazy loading advanced technologies."
+      ]
+    },
+    {
+      "designation": "Application Development Analyst",
+      "organisation": "Accenture",
+      "joiningDate": "2016-05-18T00:00:00+05:30",
+      "lastDate": "2018-11-17T00:00:00+05:30",
+      "location": "Bengaluru, KA, IN",
+      "responsibilities": [
+        "Worked on multiple project of myLearning-ILC, a Learning management application of Accenture Internal Employee and curriculum Planning for Learning management.",
+        "Hands on RESTful Web API and MVC in .NET Framework and C#."
+      ]
+    }
+  ],
+  "contactInfo": {
+    "phone": "+91 891 885 7279",
+    "email": "akashneel.ghosh.corporate1994@gmail.com",
+    "address": "Kharagpur, WB, IN",
+    "linkedIn": "https://www.linkedin.com/in/akashneel-ghosh-124976109/",
+    "github": "https://github.com/akashneelGhoshDev"
+  }
 }

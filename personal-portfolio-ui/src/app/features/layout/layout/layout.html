@@ -13,16 +13,102 @@
               <h1 class="text-5xl basis-full">
                 {{ data?.['fullName'] }}
               </h1>
-              <h4 class="text-xl text-gray-500">
+              <h4 class="text-xl text-gray-500 basis-full">
                 {{ data?.['currentDesignation'] }}
               </h4>
-              <p>
-                {{ data?.['summary'] }}
-              </p>
+              @if (data?.['contactInfo']; as contactInfo) {
+                <div class="flex gap-4 flex-wrap">
+                  <div>
+                    <img src="icons/envelope-fill.svg" alt="email" /><a
+                      href="mailto:{{ contactInfo?.['email'] }}"
+                    ></a>
+                    {{ contactInfo?.['email'] }}
+                  </div>
+                </div>
+              }
             </div>
           </div>
         </section></mat-card-content
       ></mat-card
     >
+    <mat-card class="w-full">
+      <mat-card-content
+        ><section>
+          <p>
+            {{ data?.['summary'] }}
+          </p>
+        </section></mat-card-content
+      ></mat-card
+    >
+    <mat-card class="w-full gap-4">
+      <mat-card-header
+        ><mat-card-title><b>Skills</b></mat-card-title></mat-card-header
+      >
+      <mat-card-content>
+        <section>
+          <div class="flex flex-wrap gap-4">
+            @if (data?.['firstSkillSet']; as firstSkillSet) {
+              <mat-chip-set>
+                @for (item of firstSkillSet; track $index) {
+                  <mat-chip>{{ item }}</mat-chip>
+                }
+              </mat-chip-set>
+            }
+            @if (data?.['secondSkillSet']; as secondSkillSet) {
+              <mat-chip-set>
+                @for (item of secondSkillSet; track $index) {
+                  <mat-chip>{{ item }}</mat-chip>
+                }
+              </mat-chip-set>
+            }
+            @if (data?.['thirdSkillSet']; as thirdSkillSet) {
+              <mat-chip-set>
+                @for (item of thirdSkillSet; track $index) {
+                  <mat-chip>{{ item }}</mat-chip>
+                }
+              </mat-chip-set>
+            }
+          </div>
+        </section>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="w-full gap-4">
+      <mat-card-header
+        ><mat-card-title><b>Work Experience</b></mat-card-title></mat-card-header
+      >
+      <mat-card-content>
+        @if (data?.['workExperience']; as workExperience) {
+          @for (item of workExperience; track $index) {
+            <div class="my-4">
+              <div class="text-lg">
+                {{ item?.['organisation'] }}
+              </div>
+              <div class="text-gray-500">{{ item?.['designation'] }}</div>
+              <div class="my-2 flex text-gray-500 justify-between">
+                <span class="italic">
+                  {{ item?.['joiningDate'] | date: 'MMM, yyyy' }} -
+                  @if (item?.['lastDate']) {
+                    {{ item?.['lastDate'] | date: 'MMM, yyyy' }}
+                  } @else {
+                    Present
+                  }
+                </span>
+                <span>
+                  {{ item?.['location'] }}
+                </span>
+              </div>
+              @if (item?.['responsibilities']; as responsibilities) {
+                <ul role="list" class="list-disc list-inside m-2">
+                  @for (responsibility of responsibilities; track $index) {
+                    <li role="listitem" [innerHTML]="responsibility"></li>
+                  }
+                </ul>
+              }
+            </div>
+            <mat-divider></mat-divider>
+          }
+        }
+      </mat-card-content>
+    </mat-card>
   </div>
 }
