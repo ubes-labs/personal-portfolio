@@ -1,22 +1,28 @@
 @if (_data$(); as data) {
-  <mat-card>
-    <div class="flex gap-4 p-4 flex-wrap overflow-auto">
-      <div class="flex flex-col gap-4">
-        <img
-          class="w-45 h-45 rounded-full object-cover border border-gray-300 shadow-sm"
-          src="images/profile_photo.jpg"
-          alt="Profile photo"
-        />
-      </div>
-      <div class="flex flex-col gap-4">
-        <section>
+  <div class="flex gap-4 flex-wrap overflow-auto">
+    <mat-card class="w-full">
+      <mat-card-content
+        ><section>
           <div class="flex gap-4 flex-wrap">
-            <h1 class="text-5xl">
-              {{ data?.['fullName'] }}
-            </h1>
+            <img
+              class="w-45 h-45 rounded-full object-cover border border-gray-300 shadow-sm"
+              src="images/profile_photo.jpg"
+              alt="Profile photo"
+            />
+            <div class="flex flex-1 gap-4 flex-wrap mb-auto">
+              <h1 class="text-5xl basis-full">
+                {{ data?.['fullName'] }}
+              </h1>
+              <h4 class="text-xl text-gray-500">
+                {{ data?.['currentDesignation'] }}
+              </h4>
+              <p>
+                {{ data?.['summary'] }}
+              </p>
+            </div>
           </div>
-        </section>
-      </div>
-    </div></mat-card
-  >
+        </section></mat-card-content
+      ></mat-card
+    >
+  </div>
 }
